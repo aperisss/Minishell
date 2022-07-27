@@ -1,8 +1,8 @@
 #include "minishell.h"
 
-void    add_token(t_token **token_list)
+void    add_token(t_list**token_list)
 {
-    t_token *new_token;
+    t_list*new_token;
 
     new_token = malloc(sizeof(t_token));
 
@@ -18,7 +18,7 @@ void    add_token(t_token **token_list)
     }
 }
 
-void    create_token_list(t_token **token_list, char **cmd_table)
+void    create_token_list(t_list**token_list, char **cmd_table)
 {
     int i;
 
@@ -30,49 +30,47 @@ void    create_token_list(t_token **token_list, char **cmd_table)
     }
 }
 
-void    tokenization2(t_token **token_list, char **cmd_table, int i)
+void    tokenization2(t_list**token_list, char **cmd_table, int i)
 {
-    t_token *tmp;
+    t_list*tmp;
     tmp = *token_list;
 
     while (cmd_table[i] && tmp)
     {
         if (ft_strcmp(cmd_table[i], "(") == 0)
-            tmp->token = OPEN_PAR;
+            tmp->content.token_type = OPEN_PAR;
         else if (ft_strcmp(cmd_table[i], ")") == 0)
-            tmp->token = CLOSE_PAR;
+            tmp->content.token_type = CLOSE_PAR;
         else if (ft_strcmp(cmd_table[i], "&&") == 0)
-            tmp->token = AND;
+            tmp->content.token_type = AND;
         else if (ft_strcmp(cmd_table[i], "||") == 0)
-            tmp->token = OR;
+            tmp->content.token_type = OR;
         else
-            tmp->token = WORDS;
+            tmp->content.token_type = WORDS;
         i++;
         tmp = tmp->next;
     }
 }
 
-void    tokenization(t_token **token_list, char **cmd_table)
+void    tokenization(t_list**token_list, char **cmd_table)
 {
     int i;
-    t_token *tmp;
+    t_list *tmp;
     tmp = *token_list;
 
     i = 0;
     while (cmd_table[i] && tmp)
     {
         if (ft_strcmp(cmd_table[i], "|") == 0)
-            tmp->token = PIPE;
+            tmp->content.token_type = PIPE;
         else if (ft_strcmp(cmd_table[i], ">") == 0)
-            tmp->token = ONE_REDIR_RIGHT;
+            tmp->content.token_type = RET_TO;
         else if (ft_strcmp(cmd_table[i], "<") == 0)
-            tmp->token = ONE_REDIR_LEFT;
+            tmp->content.token_type = RET_FROM;
         else if (ft_strcmp(cmd_table[i], ">>") == 0)
-            tmp->token = DOUBLE_REDIR_RIGHT;
+            tmp->content.token_type = DGREAT;
         else if (ft_strcmp(cmd_table[i], "<<") == 0)
-            tmp->token = DOUBLE_REDIR_LEFT;
-        else if (ft_strcmp(cmd_table[i], "*") == 0)
-            tmp->token = WILDCARDS;
+            tmp->content.token_type = DLESS;
         else
             tokenization2(&tmp,cmd_table, i);
         i++;
@@ -80,11 +78,11 @@ void    tokenization(t_token **token_list, char **cmd_table)
     }
 }
 
-t_token *lexer(char *input)
+t_list *lexer(char *input)
 {
     int i;
     char **cmd_table;
-    t_token *token_list;
+    t_list*token_list;
 
     token_list = malloc(sizeof(t_token));
     token_list = NULL;

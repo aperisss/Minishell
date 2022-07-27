@@ -1,0 +1,26 @@
+total 124
+drwxr-xr-x  5 aperis 2021_paris  4096 Jul 25 12:23 .
+drwxr-xr-x 11 aperis 2021_paris  4096 Jul 25 12:23 ..
+-rwxr-xr-x  1 aperis 2021_paris 27504 Jul 25 12:23 a.out
+-rw-r--r--  1 aperis 2021_paris  1271 Jul 25 12:24 btree.c
+-rw-r--r--  1 aperis 2021_paris  2175 Jul 25 12:23 ft_split.c
+drwxr-xr-x  8 aperis 2021_paris  4096 Jul 25 12:23 .git
+-rw-r--r--  1 aperis 2021_paris  2191 Jul 25 12:23 lexeur.c
+drwxr-xr-x  2 aperis 2021_paris  4096 Jul 25 12:23 libft
+-rw-r--r--  1 aperis 2021_paris   321 Jul 25 12:23 maain.c
+-rw-r--r--  1 aperis 2021_paris   698 Jul 25 12:23 Makefile
+-rw-r--r--  1 aperis 2021_paris  3680 Jul 25 12:23 mini.h
+-rw-r--r--  1 aperis 2021_paris  4105 Jul 25 12:23 minishell.h
+-rw-r--r--  1 aperis 2021_paris   172 Jul 25 12:23 minishell_utils.c
+-rw-r--r--  1 aperis 2021_paris  2010 Jul 25 12:23 parsing.c
+drwxr-xr-x  2 aperis 2021_paris  4096 Jul 25 12:23 srcs
+-rw-r--r--  1 aperis 2021_paris  3724 Jul 25 12:23 State0.c
+-rw-r--r--  1 aperis 2021_paris  3059 Jul 25 12:23 state15.c
+-rw-r--r--  1 aperis 2021_paris  1249 Jul 25 12:23 state18.c
+-rw-r--r--  1 aperis 2021_paris  2307 Jul 25 12:23 state23.c
+-rw-r--r--  1 aperis 2021_paris  1785 Jul 25 12:23 state31.c
+-rw-r--r--  1 aperis 2021_paris  1868 Jul 25 12:23 state35.c
+-rw-r--r--  1 aperis 2021_paris  1510 Jul 25 12:23 state39.c
+-rw-r--r--  1 aperis 2021_paris  3808 Jul 25 12:23 state6.c
+-rw-r--r--  1 aperis 2021_paris  1961 Jul 25 12:23 state9.c
+-rw-r--r--  1 aperis 2021_paris     0 Jul 25 12:28 test
