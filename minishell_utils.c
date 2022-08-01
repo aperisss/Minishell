@@ -21,4 +21,5 @@ void print_token_list(t_list *prev)
 		printf("token_list = %d\n", prev->content.token_type);
 		prev = prev->next;
 	}
+	printf("\n");
 }

@@ -27,7 +27,7 @@ void *add_node_left_and_right(t_btree **cmd)
 void	btree_last(t_btree **cmd)
 {
 	t_btree *tmp;
-	
+
 	tmp = *cmd;
 	*cmd = (*cmd)->right;
 	(*cmd)->right = NULL;

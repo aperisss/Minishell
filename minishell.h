@@ -64,6 +64,7 @@ typedef	struct s_data
 	char	**envp;
 	int		exit_status;
 	int		pipefd[2][2];
+    int     par;
 	//int		quoting;
 	//int		parenthese;
 } t_data;
@@ -102,11 +103,11 @@ void *add_node_right(t_btree **cmd);
 void *add_node_left(t_btree **cmd);
 void	btree_last(t_btree **cmd);
 
-t_btree *btree_create(t_list **token_list);
-t_btree *node_or(t_btree **cmd, t_list **token_list);
-t_btree *node_and(t_btree **cmd, t_list **token_list);
-t_btree *node_pipe( t_btree **cmd, t_list **token_list);
-t_btree	*btree_cmd(t_list **token_list);
+t_btree *btree_create(t_list **token_list, t_data *data, int par);
+t_btree *node_or(t_btree **cmd, t_list **token_list, t_data *data, int par);
+t_btree *node_and(t_btree **cmd, t_list **token_list, t_data *data, int par);
+t_btree *node_pipe( t_btree **cmd, t_list **token_list, t_data *data, int par);
+t_btree	*btree_cmd(t_list **token_list, t_data *data, int par);
 t_btree *btree_cmd_left(t_btree **cmd, t_list **stack);
 t_btree *btree_cmd_right(t_btree **cmd, t_list **stack);
 
